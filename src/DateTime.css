@@ -1,0 +1,7 @@
+.sectionBar{
+	background: yellow;
+}
+
+.sectionBar > p {
+	color: yellow;
+}
