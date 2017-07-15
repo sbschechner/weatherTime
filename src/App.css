@@ -1,3 +1,7 @@
 .navBar{
   background: yellow;
 }
+
+.navBarHeader{
+margin-top: 0;
+}

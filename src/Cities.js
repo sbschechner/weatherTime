@@ -27,9 +27,10 @@ showSomething(){
   if(this.state.showSection === true){
       return (
         <div>
-          <h2 className="title"> The Current Weather </h2>
+          <h2 className="title"> The Current Weather in {this.props.location} </h2>
 
-          <p> the current weather is {this.props.currentWeather} </p>
+          <p> the current weather is {this.props.weather} </p>
+          <p> the temp is {this.props.temperature} &#8457;</p>
 
         </div>
 

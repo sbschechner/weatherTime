@@ -42,7 +42,7 @@ hideAway(){
    showSomething(){
 	if(this.state.showSection === false){
 		return(
-			<br /> //am going to want to collaspe this section later
+			<br/> //am going to want to collaspe this section later
 			)
 	}
 

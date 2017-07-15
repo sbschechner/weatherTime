@@ -10,7 +10,9 @@ class AddCity extends Component {
         showSection: true,
         tempZip: null,
         tempCity:null,
-        citiesCurrent: ["hello",],
+        hasCurrentData:false,
+        citiesCurrentWeather: null,
+        citiesCurrentTemp:null,
         cityForecast:[null,]
 
         };
@@ -19,6 +21,7 @@ this.changeTempNumber = this.changeTempNumber.bind(this);
 this.handleClick = this.handleClick.bind(this);
 this.changeCity = this.changeCity.bind(this);
 this.passCity = this.passCity.bind(this);
+this.getWeather = this.getWeather.bind(this);
   }
 
 hideAway(){
@@ -32,7 +35,8 @@ hideAway(){
     }
 
  changeCity(event){
-    this.setState({tempCity : event.target.value})
+ 	var cityName = event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1);
+    this.setState({tempCity : cityName})
     }
 
 handleClick(event){
@@ -40,15 +44,77 @@ handleClick(event){
   console.log("handle Click");
   console.log("zip is " + this.state.tempZip);
   console.log("city is" + this.state.tempCity);
-  //this.zipToLocation() this will be at API call to get the weather and the forecast
+  this.getWeather()
+}
+
+getWeather(){
+if(this.state.tempZip === null){ //this is a city Name search
+var URL = 'http://api.openweathermap.org/data/2.5/weather?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+fetch(URL).then((response) => response.json())
+ .then(data => {
+        console.log("we are getting the weather via City");
+        console.log(data); 
+        var temperature = data.main.temp
+        var weatherDescription = data.weather[0].description
+        console.log(temperature);
+        console.log(weatherDescription);
+        this.setState({
+        	citiesCurrentTemp: temperature,
+        	citiesCurrentWeather: weatherDescription,
+            hasCurrentData : true
+        }) 
+    }
+  )   
 }
 
 
+if(this.state.tempCity === null){ //this is a zipCode search
+var URL = 'http://api.openweathermap.org/data/2.5/weather?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+fetch(URL).then((response) => response.json())
+ .then(data => {
+        console.log("we are getting the weather via zipCode");
+        console.log(data); 
+        var temperature = data.main.temp
+        var weatherDescription = data.weather[0].description
+        console.log(temperature);
+        console.log(weatherDescription);
+        this.setState({
+        	citiesCurrentTemp: temperature,
+        	citiesCurrentWeather: weatherDescription,
+        	tempCity: data.name,
+            hasCurrentData : true
+        }) 
+    }
+  )   
+}
+
+/*if(this.state.tempZip === null){ //this is a city Name search
+var URL = 'http://api.openweathermap.org/data/2.5/forecast?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+fetch(URL).then((response) => response.json())
+ .then(data => {
+        console.log("we are getting the weather via City");
+        console.log(data); 
+        var temperature = data.list[0].main.temp;
+        var weatherDescription = data.list[0].weather[0].description;
+        console.log(temperature);
+        console.log(weatherDescription);
+        this.setState({
+        	citiesCurrentTemp: temperature,
+        	citiesCurrentWeather: weatherDescription,
+            hasCurrentData : true
+        }) 
+    }
+  )   
+}*/ //THIS IS THE 5 DAY FORECAST FOR THE WEATHER YOU JUST CHANGE Q TO ZIP AND ADD ZIP CODE
+
+}
+
 passCity(){
-	if(this.state.citiesCurrent[0] !== null){
+	if(this.state.hasCurrentData === true){
+		//issue with passing currentWeather = {this.state.citiesCurrent[0]}
 		return(
 			<div>
-				<CitiesCurrent currentWeather = {this.state.citiesCurrent}/>
+				<CitiesCurrent location={this.state.tempCity} temperature={this.state.citiesCurrentTemp} weather = {this.state.citiesCurrentWeather}/>
 				<City5Day forecast={this.state.cityForecast}/>
 			</div>
 			)
@@ -57,7 +123,6 @@ passCity(){
 		return(
 			<div>
 			<br/>
-			<p> no city data </p>
 			</div>
 			)
 	}
