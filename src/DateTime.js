@@ -7,10 +7,13 @@ class DateTime extends Component {
     this.state = {
         currentDay: null,
         currentHour: null,
-        currentMinute:null
+        currentMinute:null,
+        showSection:true,
         };
 
 this.getDate = this.getDate.bind(this);
+this.hideAway = this.hideAway.bind(this);
+this.showSomething = this.showSomething.bind(this);
   }
 
 getDate(){
@@ -30,16 +33,41 @@ componentDidMount(){
   })
 }
 
+hideAway(){
+	this.setState(prevState => ({
+    showSection: !prevState.showSection
+    }));
+  }
+
+   showSomething(){
+	if(this.state.showSection === false){
+		return(
+			<br /> //am going to want to collaspe this section later
+			)
+	}
+
+	if(this.state.showSection === true){
+		return(
+
+			<div>
+      			<div className ="dateTimeCont">
+      				<h2> The Time is <span> {this.state.currentHour} : {this.state.currentMinute} </span> on {this.state.currentDay} </h2>
+     			</div>
+     		</div>
+			)
+		}
+	}
+
   render() { 
     return(
-    <div>
-    	<div className="sectionBar" >
+
+       	<div>
+  	  	<div className="sectionBar" onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
-      	<div className ="dateTimeCont">
-      		<h2> The Time is <span> {this.state.currentHour} : {this.state.currentMinute} </span> on {this.state.currentDay} </h2>
-     	</div>
-     </div>
+    	{this.showSomething()}
+  	</div>
+
       );
   }
 }

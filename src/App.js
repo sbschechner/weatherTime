@@ -19,7 +19,6 @@ export default function App(props) {
                     <p> WeatherTime App </p>
                 <DateTime />
                 <AddCity />
-
                 </main>
                 <p> down here</p>
             </div>
