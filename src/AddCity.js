@@ -13,18 +13,8 @@ class AddCity extends Component {
         hasCurrentData:false,
         citiesCurrentWeather: null,
         citiesCurrentTemp:null,
-        cityForecast:[
-        	{
-        		"day1Weather": null,
-        		"day1Temperature": null,
-        	},
-			{
-				"day2Weather":null,
-			},
-			{
-				"day3Weather":null,
-			},
-   	],
+        cityForecastTemp: null,
+        cityForecastWeather:null,
 
         };
 this.hideAway = this.hideAway.bind(this);
@@ -104,26 +94,45 @@ fetch(URLcity).then((response) => response.json())
   )   
 }
 
-/*
+
 if(this.state.tempZip === null){ //this is a city Name search
 var URL = 'http://api.openweathermap.org/data/2.5/forecast?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
 fetch(URL).then((response) => response.json())
  .then(data => {
         console.log("we are getting the forecast weather via City");
         console.log(data); 
-        var temperature = data.list[0].main.temp;
-        var weatherDescription = data.list[0].weather[0].description;
+        var temperature = data.list[3].main.temp; //this grabs weather for tomorrow at 9AM 
+        var weatherDescription = data.list[3].weather[0].description;
         console.log(temperature);
         console.log(weatherDescription);
         this.setState({
-        	"cityForecast[0].day1Weather": temperature,
-        	"cityForecast[0].day1Temperature": weatherDescription,
+        	cityForecastTemp: temperature,
+        	cityForecastWeather: weatherDescription,
             hasCurrentData : true
         }) 
     }
   )   
 }
-*/
+
+if(this.state.tempCity === null){ //this is a city Name search
+var URL = 'http://api.openweathermap.org/data/2.5/forecast?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+fetch(URL).then((response) => response.json())
+ .then(data => {
+        console.log("we are getting the forecast weather via City");
+        console.log(data); 
+        var temperature = data.list[3].main.temp; //this grabs weather for tomorrow at 9AM 
+        var weatherDescription = data.list[3].weather[0].description;
+        console.log(temperature);
+        console.log(weatherDescription);
+        this.setState({
+        	cityForecastTemp: temperature,
+        	cityForecastWeather: weatherDescription,
+            hasCurrentData : true
+        }) 
+    }
+  )   
+}
+
 }
 
 passCity(){
@@ -131,7 +140,7 @@ passCity(){
 		return(
 			<div>
 				<CitiesCurrent location={this.state.tempCity} temperature={this.state.citiesCurrentTemp} weather = {this.state.citiesCurrentWeather}/>
-				<City5Day forecast={this.state.forecast}/>
+				<City5Day forecastTemp={this.state.cityForecastTemp} forecastWeather={this.state.cityForecastWeather}/>
 			</div>
 			)
 	}
@@ -158,7 +167,7 @@ reset(){
 		if(this.state.showSection === true && this.state.hasCurrentData === true){
 		return(
 
-			<button onClick={this.resetButtonAppear}> Look Up Another City or Zip Code </button>
+			<button className = "resetButton" onClick={this.resetButtonAppear}> Look Up Another City or Zip Code </button>
 
 			)
 	}

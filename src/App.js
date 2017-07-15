@@ -20,7 +20,6 @@ export default function App(props) {
                 <DateTime />
                 <AddCity />
                 </main>
-                <p> down here</p>
             </div>
         <div className = "footer" >
           <h2> we are in the footer in the app </h2>

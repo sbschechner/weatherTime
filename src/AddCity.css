@@ -6,3 +6,10 @@
 	color: yellow;
 }
 
+.resetButton{
+	margin-bottom: 15px;
+}
+
+input{
+	margin-left:5px;
+}
