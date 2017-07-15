@@ -26,10 +26,15 @@ return dateTime
 componentDidMount(){ 
   var theDate = this.getDate();
   var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+  var minutes = theDate.getMinutes()
+  if(minutes<10){
+    minutes = "0"+ minutes
+
+  }
   this.setState({
   	currentDay : days[theDate.getDay()],
   	currentHour: theDate.getHours(),
-  	currentMinute: theDate.getMinutes()
+  	currentMinute: minutes
   })
 }
 
@@ -62,7 +67,7 @@ hideAway(){
     return(
 
        	<div>
-  	  	<div className="sectionBar" onClick={this.hideAway}>
+  	  	<div className="sectionBar" id="time" onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
     	{this.showSomething()}

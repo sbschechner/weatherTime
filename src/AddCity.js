@@ -209,7 +209,7 @@ showSomething(){
   	return(
   		
   	<div>
-  	  	<div className="sectionBar" onClick={this.hideAway}>
+  	  	<div className="sectionBar" id="weather" onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
     	{this.reset()}

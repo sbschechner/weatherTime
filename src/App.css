@@ -9,3 +9,25 @@ margin-top: 0;
 div{
 	text-align: center;
 }
+
+.navBarLinksList > li {
+display: inline;
+padding: 10px;
+color:blue;
+}
+
+
+li>a{
+	color: blue;
+}
+
+.navBar{
+	z-index: 2;
+	position: fixed;
+	width: 100%;
+	margin-top: 0;
+}
+
+main{
+	padding-top: 45px;
+}
