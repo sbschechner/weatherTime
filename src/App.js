@@ -10,7 +10,7 @@ export default function App(props) {
         <div>
             <div className="app">
                 <header className = "navBar">
-                    <h2 className="navBarHeader"> this is the header </h2>
+                    <h2 className="navBarHeader"> this is the header and Links will go here</h2>
 
                     <div className ='navBarLinks'>
                     </div>
