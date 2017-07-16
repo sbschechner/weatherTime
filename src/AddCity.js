@@ -181,7 +181,7 @@ showSomething(){
 	}
 	if(this.state.showSection === true){
 		return(
-			<div className="theForms">
+			<div className="theForms" >
 				<h2 id="header"> The Weather </h2>
 				<form>
         			<label>

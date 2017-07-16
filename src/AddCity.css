@@ -1,5 +1,6 @@
 .sectionBar{
 	background: yellow;
+	margin-bottom: 0;
 }
 
 .sectionBar > p {

@@ -56,7 +56,7 @@ hideAway(){
 
 			<div>
             <h2> The Time </h2>
-      			<div className ="dateTimeCont">
+      			<div className ="dateTimeCont" id="time">
       				<h2> The Time is <span> {this.state.currentHour} : {this.state.currentMinute} </span> on {this.state.currentDay} </h2>
      			</div>
      		</div>
@@ -68,7 +68,7 @@ hideAway(){
     return(
 
        	<div>
-  	  	<div className="sectionBar" id="time" onClick={this.hideAway}>
+  	  	<div className="sectionBar" onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
     	{this.showSomething()}

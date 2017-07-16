@@ -31,3 +31,11 @@ li>a{
 main{
 	padding-top: 45px;
 }
+
+.footer{
+	background: yellow;
+}
+
+.footer >h4{
+	margin-bottom: 0;
+}

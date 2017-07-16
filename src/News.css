@@ -1,6 +1,5 @@
 .sectionBar{
 	background: yellow;
-	margin-bottom: 35px;
 }
 
 .sectionBar > p {
@@ -13,4 +12,8 @@ button{
 
 td > a{
 	color:blue;
+}
+
+td{
+	padding:15px;
 }
