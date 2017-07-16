@@ -7,3 +7,5 @@ and need to add react plug in tap to dependencies
 
 
 will need to do something like when you hit submit on add city, that section changes to a button saying, add another? or disappears?
+
+netlify deploy -p ./build

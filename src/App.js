@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import DateTime from './DateTime';
 import AddCity from './AddCity';
+import News from './News';
 
 
 export default function App(props) {
@@ -15,7 +16,7 @@ export default function App(props) {
                     <ul className="navBarLinksList">
                       <li> <a href="/#top"> Time</a>    </li>
                       <li> <a href="/#time"> Weather</a>    </li>
-                      <li> <a href="/#testing">  Testing </a> </li>
+                      <li> <a href="/#news">  News </a> </li>
                     </ul>
                     </div>
                 </header>
@@ -23,6 +24,7 @@ export default function App(props) {
                     <p> One place for weather and time</p>
                 <DateTime />
                 <AddCity />
+                <News />
                 </main>
             </div>
         <div className = "footer" >
