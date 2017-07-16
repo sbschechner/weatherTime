@@ -1,8 +1,11 @@
 .sectionBar{
-	background: yellow;
+	background: #5fda64;
 }
 
 .sectionBar > p {
-	color: yellow;
+	color: #5fda64;
 }
 
+#header{
+	padding-top:10px;
+}

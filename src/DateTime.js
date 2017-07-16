@@ -54,11 +54,11 @@ hideAway(){
 	if(this.state.showSection === true){
 		return(
 
-			<div>
-            <h2> The Time </h2>
-      			<div className ="dateTimeCont" id="time">
+			<div id="time">
+            <h2 id="header"> The Time </h2>
+      			<div className ="dateTimeCont">
       				<h2> The Time is <span> {this.state.currentHour} : {this.state.currentMinute} </span> on {this.state.currentDay} </h2>
-     			</div>
+          </div>
      		</div>
 			)
 		}
@@ -68,7 +68,7 @@ hideAway(){
     return(
 
        	<div>
-  	  	<div className="sectionBar" onClick={this.hideAway}>
+  	  	<div className="sectionBar"onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
     	{this.showSomething()}

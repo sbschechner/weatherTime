@@ -183,14 +183,17 @@ showSomething(){
 		return(
 			<div className="theForms" >
 				<h2 id="header"> The Weather </h2>
+				<div className="formCont">
 				<form>
         			<label>
          				Please enter your zip code:
             			<input ref="zip" type='number' defaultValue = {this.state.tempZip} onChange = {this.changeTempNumber}/>
             		</label>
-            		<input  type="submit" value="Submit Zip" onClick = {this.handleClick}/>
+            		<input  type="submit" value="Submit Zip" onClick = {this.handleClick}/>    
         		</form>
-        		<h2> OR </h2>
+
+        			<h2 id="theOr"> OR </h2>
+        			<br/>
         		<form>
         			<label>
          				Please enter your city:
@@ -198,7 +201,14 @@ showSomething(){
             		</label>
             		<input type="submit" value="Submit City" onClick = {this.handleClick}/>
         		</form>
+
+        		</div>
+        		<div>
+        			{this.reset()}
+        		</div>
         		{this.passCity()}
+
+
 			</div>
 
 			)
@@ -213,9 +223,8 @@ showSomething(){
   	  	<div className="sectionBar" id="weather" onClick={this.hideAway}>
     		<p>  writing</p>
     	</div>
-    	{this.reset()}
-    	<br/>
     	{this.showSomething()}
+
     	
   	</div>
   )

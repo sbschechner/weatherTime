@@ -1,5 +1,5 @@
 .sectionBar{
-	background: yellow;
+	background: #5fda64;
 	margin-bottom: 0;
 }
 
@@ -8,7 +8,18 @@
 }
 
 .resetButton{
-	margin-bottom: 15px;
+	
+	margin-top: 20px;
+}
+
+.formCont{
+	display: inline-flex;
+}
+
+#theOr{
+	margin: 0;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 input{

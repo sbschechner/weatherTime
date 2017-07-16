@@ -1,5 +1,9 @@
+.app{
+	background: #aef7de;
+}
+
 .navBar{
-  background: yellow;
+  background: #5fda64;
 }
 
 .navBarHeader{
@@ -9,6 +13,7 @@ margin-top: 0;
 div{
 	text-align: center;
 }
+
 
 .navBarLinksList > li {
 display: inline;
@@ -33,9 +38,10 @@ main{
 }
 
 .footer{
-	background: yellow;
+	background: #5fda64;
 }
 
 .footer >h4{
 	margin-bottom: 0;
+	margin-top: 0;
 }

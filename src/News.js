@@ -77,7 +77,6 @@ showSomething(){
       return (
         <div >
           <h2> The News</h2>
-          <button onClick={this.refreshNews}> Refresh the News </button>
           <table >
             <tbody>
               <tr>
@@ -148,6 +147,7 @@ showSomething(){
               
             </tbody>
           </table>
+            <button onClick={this.refreshNews}> Refresh the News </button>
         </div>
         )
     }
