@@ -115,8 +115,8 @@ fetch(URL).then((response) => response.json())
 }
 
 if(this.state.tempCity === null){ //this is a city Name search
-var URL = 'http://api.openweathermap.org/data/2.5/forecast?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
-fetch(URL).then((response) => response.json())
+var URLFore = 'http://api.openweathermap.org/data/2.5/forecast?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+fetch(URLFore).then((response) => response.json())
  .then(data => {
         console.log("we are getting the forecast weather via City");
         console.log(data); 
@@ -182,6 +182,7 @@ showSomething(){
 	if(this.state.showSection === true){
 		return(
 			<div className="theForms">
+				<h2 id="header"> The Weather </h2>
 				<form>
         			<label>
          				Please enter your zip code:

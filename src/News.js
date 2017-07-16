@@ -49,7 +49,7 @@ hideAway(){
  .then(data => {
         console.log("we are getting the NY");
         console.log(data);
-        //CREATE A FOR LOOP TO GRAB THE FIRST 5
+        //CREATE A FOR LOOP TO GRAB THE FIRST 5 and then should use map to get it out into table below
         var article1Headline = data.results[0].title;
         var article1Summary = data.results[0].abstract;
         var article1Section =data.results[0].section;
@@ -78,19 +78,24 @@ showSomething(){
   if(this.state.showSection === true){
       return (
         <div>
-          <p> news time </p>
+          <h2> The News</h2>
           <button onClick={this.refreshNews}> Refresh the News </button>
           <table>
-            <tr>
-              <th> Section </th>
+            <tbody>
+              <tr>
               <th> HeadLine </th>
               <th> Summary </th>
               <th> URL </th>
             </tr>
-            <tbody>
               <tr>
                 <td>
                 {this.state.article1Headline}
+                </td>
+                <td>
+                {this.state.article1Summary}
+                </td>
+                <td> 
+                <a target="_blank" href={this.state.article1URL}> {this.state.article1URL} </a>
                 </td>
               </tr>
             </tbody>

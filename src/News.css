@@ -7,3 +7,10 @@
 	color: yellow;
 }
 
+button{
+	margin-bottom: 18px;
+}
+
+td > a{
+	color:blue;
+}

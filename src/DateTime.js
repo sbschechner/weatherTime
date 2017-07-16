@@ -55,6 +55,7 @@ hideAway(){
 		return(
 
 			<div>
+            <h2> The Time </h2>
       			<div className ="dateTimeCont">
       				<h2> The Time is <span> {this.state.currentHour} : {this.state.currentMinute} </span> on {this.state.currentDay} </h2>
      			</div>
