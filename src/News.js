@@ -80,9 +80,6 @@ showSomething(){
           <table >
             <tbody>
               <tr>
-              <th> Headline </th>
-              <th> Summary </th>
-              <th> URL </th>
             </tr>
 
               <tr>

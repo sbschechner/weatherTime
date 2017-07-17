@@ -55,7 +55,7 @@ handleClick(event){
 
 getWeather(){
 if(this.state.tempZip === null){ //this is a city Name search
-var URLzip = 'http://api.openweathermap.org/data/2.5/weather?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+var URLzip = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
 fetch(URLzip).then((response) => response.json())
  .then(data => {
         console.log("we are getting the weather via City");
@@ -75,7 +75,7 @@ fetch(URLzip).then((response) => response.json())
 
 
 if(this.state.tempCity === null){ //this is a zipCode search
-var URLcity = 'http://api.openweathermap.org/data/2.5/weather?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+var URLcity = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
 fetch(URLcity).then((response) => response.json())
  .then(data => {
         console.log("we are getting the weather via zipCode");
@@ -96,7 +96,7 @@ fetch(URLcity).then((response) => response.json())
 
 
 if(this.state.tempZip === null){ //this is a city Name search
-var URL = 'http://api.openweathermap.org/data/2.5/forecast?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+var URL = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q='+this.state.tempCity+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
 fetch(URL).then((response) => response.json())
  .then(data => {
         console.log("we are getting the forecast weather via City");
@@ -115,7 +115,7 @@ fetch(URL).then((response) => response.json())
 }
 
 if(this.state.tempCity === null){ //this is a city Name search
-var URLFore = 'http://api.openweathermap.org/data/2.5/forecast?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
+var URLFore = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?zip='+this.state.tempZip+',US&appid=ffd7b2bb6c7b336fcf0f974f329ce636&units=imperial'
 fetch(URLFore).then((response) => response.json())
  .then(data => {
         console.log("we are getting the forecast weather via City");
