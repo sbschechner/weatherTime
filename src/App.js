@@ -7,17 +7,24 @@ import News from './News';
 
 export default function App(props) {
 
+
     return (
         <div>
             <div className="app">
                 <header className = "navBar">
+                    <div className ="imgContLeft">
+                      <img alt="coffeeCups" src={require("./coffeeMug.png")} /> 
+                    </div>
                     <div className ='navBarLinks'>
-                    <h2> WeatherTime App </h2>
+                    <h2> GetReady </h2>
                     <ul className="navBarLinksList">
-                      <li> <a href="/#top"> Time</a>    </li>
+                      <li> <a href="/#top"> Clock</a>    </li>
                       <li> <a href="/#time"> Weather</a>    </li>
                       <li> <a href="/#news">  News </a> </li>
                     </ul>
+                    </div>
+                    <div className ="imgContRight">
+                          <img alt="coffeeCups" src={require("./coffeeMug.png")} /> 
                     </div>
                 </header>
                 <main id="top">

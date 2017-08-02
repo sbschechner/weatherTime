@@ -33,6 +33,20 @@ li>a{
 	margin-top: 0;
 }
 
+.imgContLeft > img{
+	width: 10%;
+	position: absolute;
+	margin-left: -42%;
+	margin-top: -3%;
+}
+
+.imgContRight> img{
+	position: absolute;
+	width: 10%;
+	margin-top: -10%;
+	padding-left: 33%;
+}
+
 main{
 	padding-top: 45px;
 }

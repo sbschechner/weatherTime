@@ -11,3 +11,13 @@ will need to do something like when you hit submit on add city, that section cha
 netlify deploy -p ./build
 
 ^^^ have to npm run build first
+
+
+
+Next Steps:
+
+Should call WeatherTime App - Morning Start 
+	Icon will be cups of coffee
+	Need to add splash will also be a cup of coffee 
+	The Weather Time app is a place where you can start all the things you need
+		Maybe add set an alarm feature?

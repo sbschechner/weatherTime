@@ -1,0 +1,35 @@
+.overallCont{
+	background: #aef7de;
+	height: 900px;
+	width:100%;
+}
+
+.headerSplash{
+	margin: auto;
+}
+
+
+.headerSplashTitle{
+	margin-top: 0;
+	padding-top: 9%;
+	font-size: xx-large;
+}
+
+.buttonCont{
+	padding: 5%;
+}
+
+a > button{
+	margin: 1.5%;
+	padding: 1%;
+	border-radius: 20px;
+	font-size: x-large;
+}
+
+img{
+	width:15%;
+}
+
+.buttonCont > a{
+	text-decoration: none;
+}
