@@ -12,19 +12,14 @@ export default function App(props) {
         <div>
             <div className="app">
                 <header className = "navBar">
-                    <div className ="imgContLeft">
-                      <img alt="coffeeCups" src={require("./coffeeMug.png")} /> 
-                    </div>
                     <div className ='navBarLinks'>
-                    <h2> GetReady </h2>
-                    <ul className="navBarLinksList">
-                      <li> <a href="/#top"> Clock</a>    </li>
-                      <li> <a href="/#time"> Weather</a>    </li>
-                      <li> <a href="/#news">  News </a> </li>
-                    </ul>
-                    </div>
-                    <div className ="imgContRight">
-                          <img alt="coffeeCups" src={require("./coffeeMug.png")} /> 
+                      <h2> GetReady </h2>
+                      <div className="linksCont">
+                        <a className= "clockLink" href="/#top">     <p> Clock </p> </a>  
+                         <a className= "weatherLink" href="/#time">  <p> Weather </p> </a>
+                         <a className="newsLink" href="/#news">   <p> News </p> </a>  
+                      </div> 
+                     
                     </div>
                 </header>
                 <main id="top">
@@ -40,5 +35,3 @@ export default function App(props) {
 
     );
 }
-
-//Live on Netlify at http://596a8ab3424ef23067fb9d43.courier-kangaroo-15044.netlify.com

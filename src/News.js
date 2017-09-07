@@ -76,17 +76,26 @@ showSomething(){
   if(this.state.showSection === true){
       return (
         <div >
-          <h2> The News</h2>
+          <h2 className = "newsHeader"> The News</h2>
           <table >
             <tbody>
               <tr>
+              <td>
+                <h3>The Headline  </h3>
+                </td>
+              <td className="middleColumn">
+                <h3 > The Scoop </h3>
+              </td>
+              <td>
+              <h3> The Link for More </h3>
+              </td>
             </tr>
 
               <tr>
                 <td>
                   {this.state.articleArrHeadline[0]}
                 </td>
-                <td>
+                <td className="middleColumn">
                   {this.state.articleArrSummary[0]}
                </td>
                 <td>
@@ -98,7 +107,7 @@ showSomething(){
                 <td>
                   {this.state.articleArrHeadline[1]}
                 </td>
-                <td>
+                <td className="middleColumn">
                   {this.state.articleArrSummary[1]}
                </td>
                 <td>
@@ -110,7 +119,7 @@ showSomething(){
                 <td>
                   {this.state.articleArrHeadline[2]}
                 </td>
-                <td>
+                <td className="middleColumn">
                   {this.state.articleArrSummary[2]}
                </td>
                 <td>
@@ -122,10 +131,10 @@ showSomething(){
                 <td>
                   {this.state.articleArrHeadline[3]}
                 </td>
-                <td>
+                <td className="middleColumn">
                   {this.state.articleArrSummary[3]}
                </td>
-                <td>
+                <td >
                   <a target="_blank" href={this.state.articleArrURL[3]}> {this.state.articleArrURL[3]} </a>
                 </td>
               </tr>
@@ -134,7 +143,7 @@ showSomething(){
                 <td>
                   {this.state.articleArrHeadline[4]}
                 </td>
-                <td>
+                <td className="middleColumn">
                   {this.state.articleArrSummary[4]}
                </td>
                 <td>

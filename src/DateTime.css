@@ -7,5 +7,9 @@
 }
 
 #header{
-	padding-top:10px;
+	padding-top:17px;
+}
+
+.dateTimeCont > h2{
+	margin-bottom: 10px;
 }
